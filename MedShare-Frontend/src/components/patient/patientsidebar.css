@@ -1,0 +1,344 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
+.patient-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 256px;
+  min-width: 256px;
+  height: 100vh;
+  overflow: hidden;
+  color: #0f172a;
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04);
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+  user-select: none;
+}
+
+.patient-sidebar-top {
+  display: flex;
+  flex-direction: column;
+  padding: 28px 16px 0;
+}
+
+/* Brand */
+
+.patient-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 12px 28px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.patient-brand-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  color: #ffffff;
+  background: #0d5c53;
+  box-shadow: 0 2px 5px rgba(13, 92, 83, 0.12);
+  transition: transform 0.15s ease;
+}
+
+.patient-brand-icon:hover {
+  transform: scale(1.02);
+}
+
+.patient-brand-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.patient-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.patient-brand-name {
+  color: #0f172a;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.patient-brand-subtitle {
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+
+.patient-navigation-section {
+  margin-top: 24px;
+}
+
+.patient-portal-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+.patient-portal-heading > span:first-child {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.patient-verified {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 7px;
+  border-radius: 4px;
+  color: #0d5c53;
+  background: #e6f4f1;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.patient-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.patient-nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 14px;
+  border-radius: 12px;
+  color: #475569;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.patient-nav-item:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.patient-nav-item.active {
+  color: #0d4a52;
+  background: #d8e8f2;
+  font-weight: 600;
+  box-shadow: inset 0 1px 2px rgba(13, 92, 83, 0.04);
+}
+
+.patient-nav-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  color: #64748b;
+}
+
+.patient-nav-item:hover .patient-nav-icon {
+  color: #0d5c53;
+}
+
+.patient-nav-item.active .patient-nav-icon {
+  color: #0d5c53;
+}
+
+.patient-nav-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+.patient-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 20px;
+  padding: 0 6px;
+  margin-left: auto;
+  border-radius: 999px;
+  color: #92400e;
+  background: #fef3c7;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.patient-active-dot {
+  width: 6px;
+  height: 6px;
+  margin-left: auto;
+  border-radius: 50%;
+  background: #0d5c53;
+}
+
+/* Bottom */
+
+.patient-sidebar-bottom {
+  padding: 0 16px 24px;
+  margin-top: auto;
+}
+
+.patient-mini-profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid #edf2f7;
+  border-radius: 12px;
+  color: inherit;
+  background: #f8fafc;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.patient-mini-profile:hover {
+  background: #f1f5f9;
+}
+
+.patient-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  color: #0d5c53;
+  background: #e6f4f1;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.patient-mini-profile-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.patient-mini-profile-name,
+.patient-mini-profile-id {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.patient-mini-profile-name {
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.patient-mini-profile-id {
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.patient-logout-divider {
+  height: 1px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  background: #e2e8f0;
+}
+
+.patient-logout {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  gap: 20px;
+  border: 0;
+  border-radius: 12px;
+  color: #64748b;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.patient-logout:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+.patient-logout-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+.patient-logout:hover .patient-logout-icon {
+  color: #dc2626;
+}
+
+.patient-logout-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+}
+
+/* Small screens: sidebar hidden off-canvas */
+
+@media (max-width: 767px) {
+  .patient-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000; /* above the overlay (999) */
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+  }
+}
+
+/* Desktop: sidebar always visible */
+@media (min-width: 768px) {
+  .patient-sidebar {
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,429 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap");
+
+.patient-top-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 292px;
+
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 72px;
+  padding: 0 32px;
+  gap: 24px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+
+  box-sizing: border-box;
+
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.patient-header-search-wrapper {
+  display: flex;
+  flex: 1;
+  max-width: 520px;
+  min-width: 0;
+}
+
+.patient-header-search {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.patient-header-search-icon {
+  position: absolute;
+
+  left: 14px;
+
+  width: 16px;
+  height: 16px;
+
+  color: #94a3b8;
+
+  stroke-width: 2;
+
+  pointer-events: none;
+}
+
+.patient-header-search input {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 48px 0 40px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+
+  outline: none;
+
+  color: #0f172a;
+  background: #f8fafc;
+
+  font-family: inherit;
+  font-size: 13px;
+
+  box-sizing: border-box;
+}
+
+.patient-header-search input::placeholder {
+  color: #94a3b8;
+}
+
+.patient-header-search input:focus {
+  border-color: #0d5c53;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(13, 92, 83, 0.1);
+}
+
+.patient-header-search kbd {
+  position: absolute;
+
+  right: 10px;
+
+  padding: 3px 6px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+
+  color: #94a3b8;
+  background: #ffffff;
+
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+/* =========================
+   HEADER ACTIONS
+========================= */
+
+.patient-header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  flex-shrink: 0;
+}
+
+/* =========================
+   HUB STATUS
+========================= */
+
+.patient-hub-status {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 6px 12px;
+
+  border: 1px solid #bbf7d0;
+  border-radius: 999px;
+
+  color: #15803d;
+  background: #f0fdf4;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.patient-hub-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #16a34a;
+}
+
+/* =========================
+   REQUEST BUTTON
+========================= */
+
+.patient-request-button {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  height: 36px;
+
+  padding: 0 14px;
+
+  border: 0;
+  border-radius: 8px;
+
+  color: #ffffff;
+  background: #0d5c53;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.patient-request-button:hover {
+  background: #094740;
+}
+
+.patient-request-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================
+   DIVIDER
+========================= */
+
+.patient-header-divider {
+  width: 1px;
+  height: 24px;
+
+  background: #e2e8f0;
+}
+
+/* =========================
+   ICON BUTTONS
+========================= */
+
+.patient-header-icon-button {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+
+  color: #64748b;
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.patient-header-icon-button:hover {
+  color: #0f172a;
+  background: #f8fafc;
+}
+
+.patient-header-icon-button svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* =========================
+   NOTIFICATION DOT
+========================= */
+
+.patient-notification-dot {
+  position: absolute;
+
+  top: 5px;
+  right: 5px;
+
+  width: 8px;
+  height: 8px;
+
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  background: #e11d48;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.patient-header-profile {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  font-family: inherit;
+}
+
+.patient-header-avatar-wrapper {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  flex-shrink: 0;
+}
+
+.patient-header-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #0d5c53,
+    #15803d
+  );
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.patient-online-dot {
+  position: absolute;
+
+  right: 3px;
+  bottom: 2px;
+
+  width: 9px;
+  height: 9px;
+
+  border: 2px solid #ffffff;
+
+  border-radius: 50%;
+
+  background: #16a34a;
+}
+
+.patient-header-profile-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+}
+
+.patient-header-name {
+  color: #0f172a;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.patient-header-location {
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+.patient-header-profile:hover .patient-header-name {
+  color: #0d5c53;
+}
+
+.patient-header-chevron {
+  width: 14px;
+  height: 14px;
+
+  color: #94a3b8;
+
+  stroke-width: 2.2;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1100px) {
+  .patient-top-header {
+    left: 292px;
+
+    padding: 0 20px;
+  }
+
+  .patient-header-actions {
+    gap: 10px;
+  }
+
+  .patient-hub-status {
+    display: none;
+  }
+
+  .patient-header-profile-info {
+    display: none;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 767px) {
+  .patient-top-header {
+    left: 0;
+
+    height: 64px;
+
+    padding: 0 14px;
+
+    gap: 12px;
+  }
+
+  .patient-header-search-wrapper {
+    max-width: none;
+  }
+
+  .patient-request-button span {
+    display: none;
+  }
+
+  .patient-request-button {
+    width: 36px;
+
+    justify-content: center;
+
+    padding: 0;
+  }
+
+  .patient-header-divider {
+    display: none;
+  }
+
+  .patient-header-profile {
+    display: none;
+  }
+}

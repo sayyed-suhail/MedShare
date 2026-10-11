@@ -1,0 +1,296 @@
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+
+  width: 280px;
+  height: 100vh;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background-color: var(--color-surface);
+  border-right: 1px solid var(--color-outline-variant);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 16px;
+
+  margin: 0;
+  padding: 10px 4px 30px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-brand-icon {
+  width: 60px;
+  height: 60px;
+
+  border-radius: 16px;
+
+  background-color: var(--color-primary-container);
+  color: var(--color-on-primary-container);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.sidebar-brand-icon .material-symbols-outlined {
+  font-size: 34px;
+}
+
+.sidebar-brand-text {
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-brand-name {
+  margin: 0;
+  padding: 0;
+
+  font-size: 28px;
+  line-height: 1;
+
+  font-weight: 900;
+
+  color: var(--color-primary);
+
+  white-space: nowrap;
+}
+
+.sidebar-brand-tagline {
+  margin: 7px 0 0;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 1.2;
+
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+
+  color: var(--color-on-surface-variant);
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.sidebar-nav {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+
+  overflow-y: auto;
+}
+
+.sidebar-nav li {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* =========================================
+   SIDEBAR LINKS
+========================================= */
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 14px 16px;
+
+  border-radius: 12px;
+
+  color: var(--color-on-secondary-fixed-variant);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  letter-spacing: 0.02em;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.sidebar-link .material-symbols-outlined {
+  font-size: 25px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-link-label {
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.sidebar-link:hover {
+  background-color: var(--color-surface-container-high);
+}
+
+.sidebar-link:hover .material-symbols-outlined {
+  color: var(--color-primary);
+}
+
+
+/* =========================================
+   ACTIVE LINK
+========================================= */
+
+.sidebar-link--active {
+  color: var(--color-primary);
+
+  font-weight: 700;
+
+  background-color: var(--color-secondary-container);
+}
+
+.sidebar-link--active:hover {
+  background-color: var(--color-secondary-container);
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.sidebar-footer {
+  margin-top: auto;
+
+  padding-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+
+  flex-shrink: 0;
+}
+
+.sidebar-footer-links {
+  border-top: 1px solid var(--color-outline-variant);
+
+  padding-top: 8px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+/* =========================================
+   SMALL FOOTER LINKS
+========================================= */
+
+.sidebar-link--small {
+  padding: 9px 14px;
+
+  font-size: 14px;
+}
+
+.sidebar-link--small .material-symbols-outlined {
+  font-size: 22px;
+}
+
+
+/* =========================================
+   CTA BUTTON
+========================================= */
+
+.sidebar-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  width: 100%;
+
+  padding: 12px 16px;
+
+  border: none;
+  border-radius: 12px;
+
+  background-color: var(--color-primary);
+
+  color: var(--color-on-primary);
+
+  font-size: 14px;
+  font-weight: 700;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sidebar-cta:hover {
+  background-color: var(--color-primary-hover);
+}
+
+.sidebar-cta .material-symbols-outlined {
+  font-size: 21px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .sidebar {
+    display: none;
+  }
+}

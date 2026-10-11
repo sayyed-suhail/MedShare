@@ -1,0 +1,176 @@
+.donations-table-card {
+  background-color: var(--color-surface-container-lowest);
+  border: 1px solid var(--color-outline-variant);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+.donations-table-header {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--color-outline-variant);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-surface);
+}
+
+.donations-table-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.donations-table-title .material-symbols-outlined {
+  color: var(--color-secondary);
+}
+
+.view-all-btn {
+  background: none;
+  border: none;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+.view-all-btn .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.donations-table-scroll {
+  overflow-x: auto;
+}
+
+.donations-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.donations-table thead tr {
+  background-color: var(--color-surface-container-lowest);
+  border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.donations-table th {
+  padding: 16px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+  white-space: nowrap;
+}
+
+.donations-table th.align-right {
+  text-align: right;
+}
+
+.donations-table td {
+  padding: 16px 24px;
+  font-size: 16px;
+  color: var(--color-on-surface);
+}
+
+.donations-table tbody tr {
+  border-bottom: 1px solid rgba(189, 201, 198, 0.5);
+  transition: background-color 0.15s ease;
+}
+
+.donations-table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.donations-table tbody tr:hover {
+  background-color: var(--color-surface-container-low);
+}
+
+.donations-table td.align-right {
+  text-align: right;
+}
+
+.medicine-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.medicine-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  background-color: var(--color-surface-variant);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.medicine-icon .material-symbols-outlined {
+  font-size: 18px !important;
+}
+
+.medicine-name {
+  font-weight: 600;
+  color: var(--color-on-surface);
+  margin: 0;
+}
+
+.medicine-category-mobile {
+  font-size: 14px;
+  color: var(--color-on-surface-variant);
+  margin: 0;
+  display: none;
+}
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.status-badge--picked-up {
+  background-color: var(--color-secondary-fixed);
+  color: var(--color-on-secondary-fixed-variant);
+}
+
+.status-badge--approved {
+  background-color: var(--color-primary-fixed);
+  color: var(--color-on-primary-fixed-variant);
+  border: 1px solid rgba(128, 213, 203, 0.3);
+}
+
+.status-badge--pending {
+  background-color: var(--color-tertiary-fixed);
+  color: var(--color-on-tertiary-fixed-variant);
+}
+
+/* Mobile: hide category column, show it under the name instead */
+@media (max-width: 639px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .medicine-category-mobile {
+    display: block;
+  }
+}

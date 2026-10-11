@@ -1,0 +1,1206 @@
+* {
+  box-sizing: border-box;
+}
+
+.requests-page {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px;
+  color: #0b1c30;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.requests-page button,
+.requests-page input,
+.requests-page select {
+  font: inherit;
+}
+
+/* ================================
+   TOP CONTEXT BAR
+================================ */
+
+.requests-context-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.requests-context-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #3f4947;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.context-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #006b60;
+  flex: 0 0 auto;
+}
+
+.requests-protocols {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.protocol-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.protocol-pill.pending {
+  background: #ffddd0;
+  color: #4a2118;
+}
+
+.protocol-pill.active {
+  background: #eff4ff;
+  color: #006b60;
+}
+
+.small-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #9a4322;
+}
+
+/* ================================
+   PAGE HEADER
+================================ */
+
+.requests-page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 22px;
+}
+
+.requests-page-header h1 {
+  margin: 0;
+  color: #004740;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 30px;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.requests-page-header p {
+  margin: 4px 0 0;
+  color: #3f4947;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+/* ================================
+   SEARCH + SORT
+================================ */
+
+.requests-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.request-search {
+  width: 280px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 12px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(11, 28, 48, 0.04);
+  color: #6f7977;
+}
+
+.request-search input {
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #0b1c30;
+  font-size: 13px;
+}
+
+.request-search input::placeholder {
+  color: #7c8885;
+}
+
+.request-sort {
+  position: relative;
+  width: 205px;
+}
+
+.request-sort select {
+  width: 100%;
+  height: 40px;
+  appearance: none;
+  border: 0;
+  outline: 0;
+  padding: 0 32px 0 13px;
+  background: #ffffff;
+  color: #3f4947;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(11, 28, 48, 0.04);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.request-sort svg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #6f7977;
+}
+
+/* ================================
+   FILTER TABS
+================================ */
+
+.request-tabs {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+  margin-bottom: 24px;
+  scrollbar-width: none;
+}
+
+.request-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.request-tabs button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 34px;
+  padding: 0 13px;
+  border: 0;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #3f4947;
+  box-shadow: 0 2px 8px rgba(11, 28, 48, 0.04);
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.request-tabs button.active {
+  background: #004740;
+  color: #ffffff;
+}
+
+.tab-count {
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: #e5eeff;
+  color: #3f4947;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.request-tabs button.active .tab-count {
+  background: #1d6960;
+  color: #ffffff;
+}
+
+/* ================================
+   MAIN WORKSPACE
+================================ */
+
+.request-workspace {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.request-left {
+  width: 66.66%;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.request-detail {
+  width: 33.34%;
+  position: sticky;
+  top: 24px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(11, 28, 48, 0.06);
+  overflow: hidden;
+}
+
+/* ================================
+   QUEUE HEADER
+================================ */
+
+.queue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 22px;
+}
+
+.queue-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.queue-title h2 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.queue-icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  color: #006b60;
+  background: #eff4ff;
+}
+
+.queue-count {
+  color: #3f4947;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* ================================
+   REQUEST TABLE
+================================ */
+
+.request-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.request-table {
+  width: 100%;
+  min-width: 790px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.request-table th {
+  padding: 12px 16px;
+  background: #eff4ff;
+  color: #3f4947;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.request-table th:first-child {
+  padding-left: 22px;
+}
+
+.request-table th:last-child {
+  padding-right: 22px;
+  text-align: right;
+}
+
+.request-table td {
+  padding: 13px 16px;
+  border-top: 1px solid #eef2f5;
+  vertical-align: middle;
+  font-size: 12px;
+}
+
+.request-table td:first-child {
+  padding-left: 22px;
+}
+
+.request-table td:last-child {
+  padding-right: 22px;
+}
+
+.request-table tbody tr {
+  cursor: pointer;
+  transition: background 0.18s ease;
+}
+
+.request-table tbody tr:hover {
+  background: #f7fafc;
+}
+
+.request-table tbody tr.selected {
+  background: #eff4ff;
+}
+
+/* ================================
+   PATIENT CELL
+================================ */
+
+.patient-cell {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.patient-avatar {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #dce9ff;
+  color: #004740;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.selected .patient-avatar {
+  background: #004740;
+  color: #ffffff;
+}
+
+.patient-name {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #0b1c30;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.patient-id {
+  margin-top: 2px;
+  color: #3f4947;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+}
+
+.verified-mark {
+  width: 15px;
+  height: 15px;
+  display: grid;
+  place-items: center;
+  color: #006b60;
+}
+
+/* ================================
+   MEDICINE CELL
+================================ */
+
+.medicine-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 190px;
+}
+
+.medicine-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #e5eeff;
+  color: #006b60;
+}
+
+.medicine-cell strong {
+  display: block;
+  color: #0b1c30;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.medicine-cell span:not(.medicine-icon) {
+  display: block;
+  margin-top: 1px;
+  color: #3f4947;
+  font-size: 10px;
+  line-height: 15px;
+}
+
+/* ================================
+   CATEGORY
+================================ */
+
+.category-pill {
+  display: inline-block;
+  max-width: 125px;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #e5eeff;
+  color: #004740;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 700;
+}
+
+.category-pill.mint {
+  background: #94f4e4;
+  color: #005048;
+}
+
+.category-pill.blue {
+  background: #dce9ff;
+  color: #004740;
+}
+
+.category-pill.soft {
+  background: #eff4ff;
+  color: #3f4947;
+}
+
+/* ================================
+   DATE + STATUS
+================================ */
+
+.date-cell strong,
+.date-cell span {
+  display: block;
+}
+
+.date-cell strong {
+  color: #0b1c30;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.date-cell span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  margin-top: 2px;
+  color: #3f4947;
+  font-size: 10px;
+}
+
+.date-cell span.urgent {
+  color: #9a4322;
+  font-weight: 700;
+}
+
+.status-cell {
+  text-align: right;
+}
+
+.request-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 104px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: #ffddd0;
+  color: #4a2118;
+  font-size: 10px;
+  line-height: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.empty-row {
+  padding: 40px !important;
+  text-align: center;
+  color: #6f7977;
+}
+
+/* ================================
+   PAGINATION
+================================ */
+
+.queue-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 15px 22px;
+  color: #3f4947;
+  font-size: 11px;
+}
+
+.queue-pagination strong {
+  color: #0b1c30;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pagination-buttons button {
+  min-width: 32px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 0 9px;
+  border: 0;
+  border-radius: 8px;
+  background: #eff4ff;
+  color: #3f4947;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.pagination-buttons button.current {
+  background: #004740;
+  color: #ffffff;
+}
+
+.pagination-buttons button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ================================
+   TURNAROUND CARD
+================================ */
+
+.turnaround-card {
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.turnaround-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.turnaround-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  border-radius: 11px;
+  background: #dce9ff;
+  color: #004740;
+}
+
+.turnaround-info h3 {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 15px;
+}
+
+.turnaround-info p {
+  margin: 3px 0 0;
+  color: #3f4947;
+  font-size: 11px;
+}
+
+.turnaround-metric {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.turnaround-metric > div {
+  text-align: right;
+}
+
+.turnaround-metric strong {
+  display: block;
+  color: #004740;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 22px;
+  line-height: 27px;
+}
+
+.turnaround-metric span {
+  color: #006b60;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.sparkline {
+  width: 92px;
+  height: 30px;
+  color: #006b60;
+}
+
+.sparkline path {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.sparkline circle {
+  fill: currentColor;
+}
+
+/* ================================
+   DETAIL PANEL
+================================ */
+
+.request-detail {
+  padding: 22px;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 12px;
+}
+
+.detail-header > span:first-child {
+  color: #3f4947;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.detail-status {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #ffddd0;
+  color: #4a2118;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ================================
+   PATIENT PROFILE
+================================ */
+
+.patient-profile {
+  padding: 16px 0;
+}
+
+.profile-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.profile-heading h2 {
+  margin: 0;
+  color: #0b1c30;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.profile-heading p {
+  margin: 3px 0 0;
+  color: #3f4947;
+  font-size: 12px;
+}
+
+.beneficiary {
+  padding: 4px 9px;
+  border-radius: 999px;
+  background: #94f4e4;
+  color: #005048;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 13px;
+  color: #3f4947;
+  font-size: 12px;
+}
+
+.contact-list div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.contact-list svg {
+  color: #6f7977;
+  flex: 0 0 auto;
+}
+
+.contact-list span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ================================
+   MEDICATION DETAILS
+================================ */
+
+.detail-section {
+  padding: 15px 0;
+}
+
+.section-label {
+  margin-bottom: 8px;
+  color: #3f4947;
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.prescribed-box {
+  padding: 14px;
+  border-radius: 12px;
+  background: #eff4ff;
+}
+
+.medicine-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.medicine-heading strong {
+  color: #004740;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 16px;
+}
+
+.medicine-heading span {
+  color: #3f4947;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.prescribed-box p {
+  margin: 9px 0 0;
+  color: #0b1c30;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.stock-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 10px;
+  padding-top: 9px;
+  border-top: 1px solid rgba(0, 71, 64, 0.08);
+}
+
+.stock-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #006b60;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.stock-row small {
+  color: #3f4947;
+  font-size: 10px;
+}
+
+/* ================================
+   PRESCRIPTION SCAN
+================================ */
+
+.scan-label-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.scan-label-row .section-label {
+  margin: 0;
+}
+
+.rx-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #94f4e4;
+  color: #005048;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.prescription-preview {
+  position: relative;
+  min-height: 175px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow:
+    inset 0 0 0 1px #edf1f3,
+    0 3px 10px rgba(11, 28, 48, 0.04);
+  overflow: hidden;
+}
+
+.prescription-preview::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  right: -45px;
+  bottom: -45px;
+  border-radius: 50%;
+  background: rgba(148, 244, 228, 0.35);
+  filter: blur(18px);
+  pointer-events: none;
+}
+
+.rx-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.rx-heading strong,
+.rx-heading span {
+  display: block;
+}
+
+.rx-heading strong {
+  color: #0b1c30;
+  font-size: 12px;
+}
+
+.rx-heading span {
+  margin-top: 3px;
+  color: #3f4947;
+  font-size: 9px;
+}
+
+.rx-heading svg {
+  color: #006b60;
+  flex: 0 0 auto;
+}
+
+.rx-body {
+  padding-top: 10px;
+  color: #0b1c30;
+  font-size: 10px;
+}
+
+.rx-body > span {
+  color: #3f4947;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 9px;
+}
+
+.rx-body strong {
+  display: block;
+  margin-top: 6px;
+  color: #004740;
+}
+
+.rx-body p {
+  margin: 2px 0 0;
+  color: #3f4947;
+  font-size: 9px;
+  line-height: 14px;
+}
+
+.rx-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 9px;
+  border-top: 1px solid #edf1f3;
+}
+
+.rx-footer > span {
+  color: #006b60;
+  font-family: Georgia, serif;
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.rx-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #004740;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+/* ================================
+   PROTOCOL NOTE
+================================ */
+
+.protocol-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 9px 0;
+  padding: 13px;
+  border-radius: 12px;
+  background: rgba(220, 233, 255, 0.62);
+}
+
+.protocol-note svg {
+  flex: 0 0 auto;
+  color: #004740;
+  margin-top: 1px;
+}
+
+.protocol-note p {
+  margin: 0;
+  color: #3f4947;
+  font-size: 11px;
+  line-height: 17px;
+}
+
+/* ================================
+   DECISION BUTTONS
+================================ */
+
+.decision-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px;
+}
+
+.approve-button,
+.reject-button {
+  width: 100%;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 11px;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", Inter, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease;
+}
+
+.approve-button {
+  border: 0;
+  background: #004740;
+  color: #ffffff;
+}
+
+.approve-button:hover {
+  background: #006b60;
+}
+
+.approve-button:active,
+.reject-button:active {
+  transform: scale(0.99);
+}
+
+.reject-button {
+  border: 0;
+  background: #ffffff;
+  color: #ba1a1a;
+}
+
+.reject-button:hover {
+  background: #fff4f3;
+}
+
+/* ================================
+   REVIEWER FOOTER
+================================ */
+
+.reviewer-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #edf1f3;
+  color: #6f7977;
+  font-size: 10px;
+}
+
+.reviewer-footer strong {
+  color: #0b1c30;
+  text-align: right;
+}
+
+/* ================================
+   TABLET / LAPTOP
+================================ */
+
+@media (max-width: 1100px) {
+  .requests-page {
+    padding: 24px;
+  }
+
+  .requests-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .requests-toolbar {
+    width: 100%;
+  }
+
+  .request-search {
+    flex: 1;
+  }
+
+  .request-workspace {
+    flex-direction: column;
+  }
+
+  .request-left,
+  .request-detail {
+    width: 100%;
+  }
+
+  .request-detail {
+    position: static;
+  }
+}
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 760px) {
+  .requests-page {
+    padding: 18px 14px;
+  }
+
+  .requests-context-bar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .requests-page-header h1 {
+    font-size: 25px;
+  }
+
+  .requests-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .request-search,
+  .request-sort {
+    width: 100%;
+  }
+
+  .turnaround-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .turnaround-metric {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .queue-pagination {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .request-detail {
+    padding: 18px;
+  }
+}
+
+/* ================================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+  .requests-page {
+    padding: 14px 10px;
+  }
+
+  .protocol-pill {
+    font-size: 10px;
+  }
+
+  .requests-page-header p {
+    font-size: 13px;
+  }
+
+  .turnaround-metric {
+    justify-content: space-between;
+  }
+
+  .sparkline {
+    width: 70px;
+  }
+}

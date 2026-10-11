@@ -1,0 +1,296 @@
+.ps-sidebar {
+  width: 256px;
+  min-width: 256px;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: 99999;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2e8f0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 24px 20px;
+
+  overflow-y: auto;
+
+  transition: left 0.25s ease;
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.ps-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 8px;
+  margin-bottom: 32px;
+}
+
+.ps-brand-icon {
+  width: 40px;
+  height: 40px;
+
+  border-radius: 12px;
+
+  background: #0d5c53;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  box-shadow: 0 1px 3px rgba(13, 92, 83, 0.2);
+}
+
+.ps-brand-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.ps-brand-name {
+  font-size: 20px;
+  font-weight: 700;
+
+  letter-spacing: -0.02em;
+
+  color: #0f172a;
+
+  line-height: 1;
+
+  margin: 0;
+}
+
+.ps-brand-sub {
+  display: block;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+  color: #94a3b8;
+
+  margin-top: 4px;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.ps-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ps-nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #475569;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.ps-nav-item-left {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.ps-nav-icon {
+  width: 20px;
+  height: 20px;
+
+  color: #94a3b8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.ps-nav-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ps-nav-item:hover {
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.ps-nav-item:hover .ps-nav-icon {
+  color: #475569;
+}
+
+.ps-nav-item.active {
+  background: #d8e8f2;
+  color: #0d4a52;
+  font-weight: 600;
+}
+
+.ps-nav-item.active .ps-nav-icon {
+  color: #0d4a52;
+}
+
+
+/* =====================================================
+   BADGES
+===================================================== */
+
+.ps-badge {
+  font-size: 11px;
+  font-weight: 700;
+
+  padding: 2px 8px;
+
+  border-radius: 9999px;
+}
+
+.ps-badge-amber {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ps-badge-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+
+/* =====================================================
+   BOTTOM
+===================================================== */
+
+.ps-sidebar-bottom {
+  padding-top: 16px;
+
+  border-top: 1px solid #f1f5f9;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+.ps-nav-item-secondary {
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #64748b;
+
+  padding: 10px 14px;
+}
+
+.ps-nav-item-secondary .ps-nav-icon {
+  color: #94a3b8;
+}
+
+.ps-nav-item-secondary:hover {
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+
+/* =====================================================
+   CLOSE BUTTON
+===================================================== */
+
+.ps-close-btn {
+  display: none;
+
+  margin-left: auto;
+
+  width: 36px;
+  height: 36px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #475569;
+
+  font-size: 28px;
+
+  line-height: 1;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.ps-close-btn:hover {
+  background: #f1f5f9;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .ps-sidebar {
+    width: 280px;
+    min-width: 280px;
+
+    left: -280px;
+
+    top: 0;
+
+    height: 100vh;
+
+    z-index: 99999;
+
+    box-shadow: 8px 0 30px rgba(15, 23, 42, 0.18);
+  }
+
+  .ps-sidebar.ps-sidebar-open {
+    left: 0;
+  }
+
+  .ps-close-btn {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+}

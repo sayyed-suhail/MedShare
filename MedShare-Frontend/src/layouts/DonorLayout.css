@@ -1,0 +1,65 @@
+:root {
+  --sidebar-width: 280px;
+  --header-height: 64px;
+}
+
+
+/* =========================================
+   DONOR LAYOUT
+========================================= */
+
+.donor-layout {
+  width: 100%;
+  min-height: 100vh;
+
+  background-color: var(--color-background);
+
+  color: var(--color-on-background);
+}
+
+
+/* =========================================
+   MAIN AREA
+========================================= */
+
+.donor-main {
+  width: calc(100% - var(--sidebar-width));
+
+  min-height: 100vh;
+
+  margin-left: var(--sidebar-width);
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.donor-content {
+  width: 100%;
+
+  min-height: 100vh;
+
+  box-sizing: border-box;
+
+  padding: 88px 24px 32px;
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+  .donor-main {
+    width: 100%;
+
+    margin-left: 0;
+  }
+
+  .donor-content {
+    padding: 80px 16px 100px;
+  }
+}

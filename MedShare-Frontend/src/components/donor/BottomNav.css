@@ -1,0 +1,70 @@
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 50;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 64px;
+  padding: 0 16px;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  height: calc(64px + env(safe-area-inset-bottom, 0px));
+
+  background-color: var(--color-surface);
+
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid var(--color-outline-variant);
+
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+/*
+  Hide bottom navigation when
+  tablet/desktop sidebar layout is active.
+*/
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 2px;
+  padding: 4px 12px;
+  border-radius: 8px;
+
+  color: var(--color-on-surface-variant);
+  text-decoration: none;
+
+  transition:
+    transform 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.bottom-nav-link:active {
+  transform: scale(0.9);
+}
+
+.bottom-nav-label {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.bottom-nav-link--active {
+  color: var(--color-on-primary-container);
+  background-color: var(--color-primary-container);
+  border-radius: 9999px;
+  padding: 4px 16px;
+}

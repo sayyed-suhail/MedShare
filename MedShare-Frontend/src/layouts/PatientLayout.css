@@ -1,0 +1,74 @@
+/* =========================================
+   PATIENT LAYOUT
+========================================= */
+
+.pharma-layout {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   MAIN AREA
+   Sidebar is fixed (256px), so main is offset by the same width
+========================================= */
+
+.pharma-main {
+  width: calc(100% - 256px);
+  min-height: 100vh;
+  margin-left: 256px;
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   PAGE CONTENT
+   Header is fixed, so content starts below it
+========================================= */
+
+.pharma-content {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 72px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+
+/* =========================================
+   SIDEBAR OVERLAY
+========================================= */
+
+.pharma-sidebar-overlay {
+  display: none;
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+   Breakpoint matches the sidebar (767px)
+========================================= */
+
+@media (max-width: 767px) {
+
+  .pharma-main {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .pharma-content {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 64px;
+    overflow-x: hidden;
+  }
+
+  .pharma-sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    z-index: 999;
+  }
+}
